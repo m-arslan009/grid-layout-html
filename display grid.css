@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    font-family: cursive;
+    margin: 10px;
+    background-color: green;
+}
+@media all and (max-width:700px)
+{
+    body{background-color: gray;}
+}
+.grid-container{
+    display: grid;
+    /* display: inline-grid; */
+    grid-gap: 10px 10px;
+    column-count: 3s;
+    animation:mymove 5s infinite;
+    grid-template-columns: auto auto auto;
+    background-color: teal;
+    padding: 4px;
+
+    /* using grid or inline-grid property having difference that grid will effect the div in row way while the inline-grid will effect in cloumn way  */
+
+}
+@keyframes mymove
+{
+    20%{column-gap: 10px}
+}
+.grid-container > div
+{
+    background-color: lightgray;
+    padding: 40px 30px;
+    /* margin: 1px; */
+    font-size: 15px;
+    text-align: center;
+
+    /* by using grid-gap property, we can give a space between grid-elements as margin give a space. 1st value is for row space while 2nd for cloumn space  */
+
+}
+.grid-element5
+{
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+.grid-element2
+{
+    grid-row-start: 2;
+    grid-row-end: 4;
+    text-align: center;
+}
