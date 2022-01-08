@@ -15,19 +15,13 @@ body
 .grid-container{
     display: grid;
     /* display: inline-grid; */
+    grid-template-columns: auto auto auto;   /* we can also use numbers for giving a specific width to column or row instead of auto property */
     grid-gap: 10px 10px;
-    column-count: 3s;
-    animation:mymove 5s infinite;
-    grid-template-columns: auto auto auto;
     background-color: teal;
     padding: 4px;
 
     /* using grid or inline-grid property having difference that grid will effect the div in row way while the inline-grid will effect in cloumn way  */
 
-}
-@keyframes mymove
-{
-    20%{column-gap: 10px}
 }
 .grid-container > div
 {
@@ -36,18 +30,57 @@ body
     /* margin: 1px; */
     font-size: 15px;
     text-align: center;
-
     /* by using grid-gap property, we can give a space between grid-elements as margin give a space. 1st value is for row space while 2nd for cloumn space  */
-
 }
-.grid-element5
+.grid-elements5
 {
     grid-column-start: 2;
     grid-column-end: 4;
 }
+
+/* function same but methond of writting is different to each other of the writting style of grid-column/row
+we can write either in start, end form or usig shorthand property to use such property */
 .grid-element2
 {
-    grid-row-start: 2;
-    grid-row-end: 4;
+    grid-row: 2/4;
     text-align: center;
+}
+.grid-box
+{
+    background-color: firebrick;
+    display: grid;
+    height: 400px;
+    align-content: center;
+    grid-template-columns: auto auto auto;
+    grid-gap: 5px;
+    margin-top: 10px;
+    /* grid-template-columns: 50px 70px auto 90px;  */
+    /* number of values means number of columns in our div grid-name. here i give 4 values which means grid-box will make 
+    4 columns that we can see in the result of our html codding on browser */
+}
+.grid-box > div
+{
+    background-color: lightgray;
+    text-align: center;
+    padding: 30px 10px;
+}
+.grid-area-container
+{
+    display: grid;
+    grid-template-columns:auto auto auto;
+    padding: 2px;
+    margin-top: 10px;
+    background-color: gray;
+}
+.grid-area-container > div
+{
+    background-color: lightgray;
+    padding: 20px 10px;
+    margin: 5px;
+    font-size: 15px;
+    text-align: center;
+}
+.grid-area-container .grid-element4
+{
+    grid-area: 1/1/4/4;
 }
